@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SplashScreen from './components/SplashScreen'
 import {
   AgentStatusPanel,
   QualityGatesPanel,
@@ -22,6 +23,7 @@ function App() {
   const streamRef = useAutoScroll<HTMLDivElement>([state.stream.length])
 
   return (
+    <SplashScreen>
     <main className="mission-shell relative isolate min-h-screen overflow-hidden p-3 md:p-4 lg:p-6">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="ambient-grid absolute inset-0" />
@@ -87,6 +89,7 @@ function App() {
         {state.demoRunning ? `Demo Running ${state.demoProgress}%` : 'Demo Ready'}
       </footer>
     </main>
+    </SplashScreen>
   )
 }
 
